@@ -1,11 +1,4 @@
-﻿using Aardvark.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aardvark.Base
+﻿namespace Aardvark.Base
 {
     /// <summary>
     /// An integral pixel position relative to specified bounds.

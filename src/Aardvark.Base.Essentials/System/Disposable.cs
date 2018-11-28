@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reactive.Disposables;
 
 namespace Aardvark.Base
 {
@@ -57,6 +56,7 @@ namespace Aardvark.Base
             disposables.Clear();
         }
 
+#if false
         /// <summary>
         /// Adds this disposable to CompositeDisposable.
         /// </summary>
@@ -65,6 +65,7 @@ namespace Aardvark.Base
             if (self == null || compositeDisposable == null) return;
             compositeDisposable.Add(self);
         }
+#endif
     }
 
     /// <summary>

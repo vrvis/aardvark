@@ -1,6 +1,4 @@
-﻿using Aardvark.Base;
-
-namespace Aardvark.Base
+﻿namespace Aardvark.Base
 {
     /// <summary>
     /// Position (x,y) in normalized device coordinates.

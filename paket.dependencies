@@ -2,21 +2,21 @@ framework: netstandard2.0, net471, netcoreapp2.0
 source https://api.nuget.org/v3/index.json
 
 nuget FSharp.Core                   ~> 4.3.0
-nuget System.Collections.Immutable  >= 1.4.0
+nuget System.Collections.Immutable  >= 1.5.0
 
-nuget System.Reactive               ~> 4.0.0-preview00001
+nuget System.Reactive               ~> 4.1.2
 nuget System.Dynamic.Runtime        ~> 4.3.0
 nuget DevILSharp                    ~> 0.2.4
 
-nuget Unofficial.LibTessDotNet     ~> 2.0.0
+nuget Unofficial.LibTessDotNet      ~> 2.0.0
 
-nuget NUnit                        ~> 3.9.0
-nuget FsUnit                       ~> 3.1.0
-nuget FsCheck                      ~> 2.10.8
-nuget FsCheck.NUnit                ~> 2.10.8
+nuget NUnit                         ~> 3.11.0
+nuget FsUnit                       ~> 3.4.0
+nuget FsCheck                       ~> 2.13.0
+nuget FsCheck.NUnit                 ~> 2.13.0
 
-nuget FsPickler                    ~> 5.2.0
-nuget FsPickler.Json               ~> 5.2.0
+nuget FsPickler                     ~> 5.2.0
+nuget FsPickler.Json                ~> 5.2.0
 
 group Build
 framework: net471

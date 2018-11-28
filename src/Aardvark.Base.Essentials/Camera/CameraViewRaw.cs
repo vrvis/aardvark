@@ -1,6 +1,4 @@
-﻿
-
-namespace Aardvark.Base
+﻿namespace Aardvark.Base
 {
     public class CameraViewRaw : ICameraView
     {

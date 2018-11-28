@@ -1,5 +1,4 @@
-﻿using Aardvark.Base;
-using System;
+﻿using System;
 
 namespace Aardvark.Base
 {

@@ -13,17 +13,10 @@ contribute to the convenience layers to C#.
 PS.: please help to improve this tutorial (typos, non-english etc)
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reactive.Linq;
-using System.Reactive;
-
 using Aardvark.Base.Incremental;
 using Aardvark.Base.Incremental.CSharp;
-using System.Reactive.Subjects;
+using System;
+using System.Linq;
 using static Aardvark.Base.CSharpInterop;
 
 namespace ExamplesCSharp
@@ -70,6 +63,8 @@ namespace ExamplesCSharp
 
             #endregion
 
+
+#if false
             #region Obserable semantics
 
             // A modref could be an observable which never ends and has an initial value.
@@ -285,6 +280,7 @@ namespace ExamplesCSharp
             {
                 inputEvil.GetValue().ToString(); // send new contents of inputEvil
             });
+
             // UnsafeRegisterCallbackNoGcRoot is a hack in the system to allow unproblematic side effects
             // to be coupled with reecution. The exeuction of order of callbacks, especially callbacks
             // which run callbacks via transactions is highly unspecified. In fact
@@ -312,7 +308,7 @@ namespace ExamplesCSharp
             on can structure programs. In fact, i think programming with mods is a completely different
             paradigm. So Take your time and help us making the libraries better.
             */
-
+#endif
         }
     }
 }

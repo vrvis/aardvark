@@ -1,8 +1,14 @@
 ﻿using System;
-using System.Reactive;
 
 namespace Aardvark.Base
 {
+    public class Unit
+    {
+        public static Unit Default = new Unit();
+
+        private Unit() { }
+    }
+
     /// <summary>
     /// The receiving side of an event source.
     /// </summary>

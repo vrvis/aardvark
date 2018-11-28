@@ -1,5 +1,4 @@
 ﻿#if INTERACTIVE
-#r "..\\..\\Packages\\Rx-Core.2.2.4\\lib\\net45\\System.Reactive.Core.dll"
 #r "..\\..\\Packages\\NUnit.2.6.3\\lib\\nunit.framework.dll"
 #r "..\\..\\Bin\\Release\\Aardvark.Base.dll"
 #r "..\\..\\Bin\\Release\\Aardvark.Preliminary.dll"

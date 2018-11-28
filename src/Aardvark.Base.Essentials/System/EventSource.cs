@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Reactive;
-using System.Reactive.Linq;
-using System.Reactive.Subjects;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Aardvark.Base
@@ -37,37 +35,13 @@ namespace Aardvark.Base
             }
         }
 
-        public IAwaitable<T> Next
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public IAwaitable<T> Next => throw new NotImplementedException();
 
-        public IObservable<T> Values
-        {
-            get
-            {
-                return m_subject;
-            }
-        }
+        public IObservable<T> Values => m_subject;
 
-        IAwaitable IEvent.Next
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        IAwaitable IEvent.Next => throw new NotImplementedException();
 
-        IObservable<Unit> IEvent.Values
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        IObservable<Unit> IEvent.Values => throw new NotImplementedException();
     }
 
     /// <summary>
@@ -83,41 +57,31 @@ namespace Aardvark.Base
         /// Creates new EventSource with given initial value.
         /// </summary>
         public static EventSource<T> Create<T>(T initialValue)
-        {
-            return new EventSource<T>(initialValue);
-        }
+            => new EventSource<T>(initialValue);
 
         /// <summary>
         /// Creates new EventSource with tuple of given initial values.
         /// </summary>
         public static EventSource<Tuple<T0, T1>> Create<T0, T1>(T0 initialValue0, T1 initialValue1)
-        {
-            return new EventSource<Tuple<T0, T1>>(Tuple.Create(initialValue0, initialValue1));
-        }
+            => new EventSource<Tuple<T0, T1>>(Tuple.Create(initialValue0, initialValue1));
 
         /// <summary>
         /// Creates new EventSource with tuple of given initial values.
         /// </summary>
         public static EventSource<Tuple<T0, T1, T2>> Create<T0, T1, T2>(T0 initialValue0, T1 initialValue1, T2 initialValue2)
-        {
-            return new EventSource<Tuple<T0, T1, T2>>(Tuple.Create(initialValue0, initialValue1, initialValue2));
-        }
+            => new EventSource<Tuple<T0, T1, T2>>(Tuple.Create(initialValue0, initialValue1, initialValue2));
 
         /// <summary>
         /// Creates new EventSource with tuple of given initial values.
         /// </summary>
         public static EventSource<Tuple<T0, T1, T2, T3>> Create<T0, T1, T2, T3>(T0 initialValue0, T1 initialValue1, T2 initialValue2, T3 initialValue3)
-        {
-            return new EventSource<Tuple<T0, T1, T2, T3>>(Tuple.Create(initialValue0, initialValue1, initialValue2, initialValue3));
-        }
+            => new EventSource<Tuple<T0, T1, T2, T3>>(Tuple.Create(initialValue0, initialValue1, initialValue2, initialValue3));
 
         /// <summary>
         /// Creates new EventSource with tuple of given initial values.
         /// </summary>
         public static EventSource<Tuple<T0, T1, T2, T3, T4>> Create<T0, T1, T2, T3, T4>(T0 initialValue0, T1 initialValue1, T2 initialValue2, T3 initialValue3, T4 initialValue4)
-        {
-            return new EventSource<Tuple<T0, T1, T2, T3, T4>>(Tuple.Create(initialValue0, initialValue1, initialValue2, initialValue3, initialValue4));
-        }
+            => new EventSource<Tuple<T0, T1, T2, T3, T4>>(Tuple.Create(initialValue0, initialValue1, initialValue2, initialValue3, initialValue4));
     }
 
     /// <summary>
@@ -276,15 +240,9 @@ namespace Aardvark.Base
         /// <summary>
         /// Observable notifications for all values that are emitted.
         /// </summary>
-        IObservable<Unit> IEvent.Values
-        {
-            get { return Values.Select(_ => Unit.Default); }
-        }
+        IObservable<Unit> IEvent.Values => Values.Select(_ => Unit.Default);
 
-        IAwaitable IEvent.Next
-        {
-            get { return Next; }
-        }
+        IAwaitable IEvent.Next => Next;
 
         #endregion
 

@@ -1,9 +1,4 @@
-﻿using Aardvark.Base;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Aardvark.Base
+﻿namespace Aardvark.Base
 {
     public static class ICameraViewExtensions
     {
