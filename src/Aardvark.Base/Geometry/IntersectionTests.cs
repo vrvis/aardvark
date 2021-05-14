@@ -3795,10 +3795,10 @@ namespace Aardvark.Base
 
         /// <summary>
         /// returns true if the Box3d and the frustum described by the M44d intersect or the frustum contains the Box3d
-        /// Assumes DirectX clip-space:
+        /// Assumes OpenGL clip-space:
         ///     -w &lt; x &lt; w
         ///     -w &lt; y &lt; w
-        ///      0 &lt; z &lt; w
+        ///     -w &lt; z &lt; w
         /// </summary>
         public static bool IntersectsFrustum(this Box3d box, M44d projection)
         {
@@ -3813,7 +3813,7 @@ namespace Aardvark.Base
             //0 < (proj.R0 + proj.R3) * v
             
             //therefore (proj.R0 + proj.R3) is the plane describing the left clip-plane.
-            //The other planes can be derived in a similar way (only the near plane is a little different)
+            //The other planes can be derived in a similar way
             //see http://fgiesen.wordpress.com/2012/08/31/frustum-planes-from-the-projection-matrix/ for a full explanation
 
             var r0 = projection.R0;
@@ -3846,7 +3846,7 @@ namespace Aardvark.Base
             if (min.Dot(n) + plane.W < 0 && max.Dot(n) + plane.W < 0) return false;
 
             //near
-            plane = r2;
+            plane = r3 + r2;
             n = plane.XYZ; box.GetMinMaxInDirection(n, out min, out max);
             if (min.Dot(n) + plane.W < 0 && max.Dot(n) + plane.W < 0) return false;
 
